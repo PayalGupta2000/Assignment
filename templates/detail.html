@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Detail</title>
+</head>
+<style>
+    /* Style for the teacher's name */
+.teacher-name {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style for the list of associated students */
+.students-list {
+    text-align: center;
+}
+
+.student {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 500px;
+    align-items: center;
+    margin-left: 30%;
+}
+
+/* Style for links */
+.student a {
+    text-decoration: none;
+    color: #0074d9;
+}
+
+</style>
+<body>
+    <h1>Teachers to their coresspondance students</h1>
+   <div class="teacher-name">
+      {% if detail.name %}
+         {{ detail.name }}
+      {% endif %}
+   </div>
+
+   <div class="students-list">
+      {% if detail.teacher_name %}
+         {% for obj in detail.teacher_name.all %}
+            <div class="student">
+               {{ obj.name }}
+            </div>
+         {% endfor %}
+      {% endif %}
+   </div>
+</body>
+</html>

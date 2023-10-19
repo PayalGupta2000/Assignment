@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Detail</title>
+</head>
+<body>
+
+   {% if teacher_detail.name %}
+    {{teacher_detail.name}}
+    {% endif %}
+
+   
+    {% for student in students %}
+    <li>{{ student.name }}</li>
+  {% endfor %}
+
+
+   
+
+   
+</body>
+</html>
